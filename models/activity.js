@@ -1,8 +1,8 @@
 class Activity {
-    constructor(id, description) {
+    constructor(id, heading, description) {
       this.id = id;
+      this.heading = heading;
       this.description = description;
-      
     }
   }
   

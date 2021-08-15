@@ -1,3 +1,4 @@
+/*
 export const ADD_MEMBER = 'ADD_MEMBER';
 export const SET_MEMBERS = 'SET_MEMBERS';
 
@@ -40,3 +41,4 @@ export const loadMembers = () => {
     
   };
 };
+*/

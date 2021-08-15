@@ -43,7 +43,7 @@ const TroopStackNavigator = () => {
       initialRouteName="Troop Info"
       screenOptions={defaultNavOptions}
     >
-      <Stack.Screen name="Troop Info" component={TroopListScreen} />
+      <Stack.Screen name="Troop List" component={TroopListScreen} />
       <Stack.Screen name="Member Details" component={MemberDetailScreen} />
     </Stack.Navigator>
   );
@@ -52,7 +52,7 @@ const TroopStackNavigator = () => {
 const ActivityStackNavigator = () => {
   return (
     <Stack.Navigator screenOptions={defaultNavOptions}>
-      <Stack.Screen name="Activities" component={ActivityListScreen} />
+      <Stack.Screen name="Activity List" component={ActivityListScreen} />
       <Stack.Screen name="Activity Details" component={ActivityDetailScreen} />    
     </Stack.Navigator>
   );

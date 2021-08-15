@@ -1,10 +1,15 @@
-import { ADD_MEMBER, SET_MEMBERS } from '../actions/troop-actions';
-import Member from '../../models/member';
+//import { ADD_MEMBER, SET_MEMBERS } from '../actions/troop-actions';
+import MEMBERS from '../../data/dummy-data-members';
 
 const initialState = {
-  Members: []
+  allMembers: MEMBERS,
 };
 
+export default (state = initialState, action) => {
+  console.log('inside reducer', state);
+  return state;
+}
+/*
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_MEMBERS:
@@ -38,3 +43,4 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+*/

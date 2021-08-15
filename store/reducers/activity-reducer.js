@@ -1,10 +1,15 @@
 import { ADD_ACTIVITY, SET_ACTIVITIES } from '../actions/activity-actions';
-import Activity from '../../models/activity';
+import ACTIVITIES from '../../data/dummy-data-activities';
 
 const initialState = {
-  Activities: []
+  allActivities: ACTIVITIES
 };
 
+export default (state = initialState, action) => {
+  console.log('inside reducer', state);
+  return state;
+}
+/*
 export default (state = initialState, action) => {
   switch (action.type) {
     case SET_ACTIVITIES:
@@ -38,3 +43,4 @@ export default (state = initialState, action) => {
       return state;
   }
 };
+*/

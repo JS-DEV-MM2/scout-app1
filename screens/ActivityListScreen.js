@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
+  FlatList,
+  Button,
+  Platform,
   StyleSheet,
 } from 'react-native';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+
+import HeaderButton from '../components/HeaderButton';
+import ActivityItem from '../components/ActivityItem';
 import { useSelector, useDispatch } from 'react-redux';
 
 import Colors from '../constants/Colors';
@@ -12,16 +17,29 @@ import * as activityActions from '../store/actions/activity-actions';
 
 const ActivityListScreen = props => {
   const [isLoading, setIsLoading] = useState(false);
-
+  const activities = useSelector(state => state.activities.allActivities);
   const dispatch = useDispatch();
 
+  const selectItemHandler = (id, description) => {
+    props.navigation.navigate('ActivityDetail', {
+      activityId: id
+    });
+  };
+
   return (
-    <View style={styles.screen}>
-        <Text style={styles.summary}>
-          Activity List Screen will be here
-        </Text>
-        
-    </View>
+    <FlatList
+      data={activities}
+      keyExtractor={item => item.id}
+      renderItem={itemData => (
+        <ActivityItem
+          heading={itemData.item.heading}
+          description={itemData.item.description}
+          onSelect={() => {
+            selectItemHandler(itemData.item.id)
+          }}
+        />
+      )}
+      />
   );
 };
 
